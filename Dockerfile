@@ -1,4 +1,4 @@
-FROM node:18.14.2
+FROM node:18.20.3-slim
 
 # set working directory
 WORKDIR /app
@@ -16,7 +16,7 @@ COPY package.json ./
 RUN npm install
 
 # add app
-COPY . ./
+COPY src ./src
 
 # start app
 CMD ["ts-node", "./src/app.ts"]
